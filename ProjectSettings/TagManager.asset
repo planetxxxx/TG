@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - machine
+  - material
+  - cloth
+  - fabric
+  - rope
+  - Pants
+  - Sweaters
+  - Hoodies
+  - Costumes
+  - Coats
+  - Tshirts
+  - CeketHasarli
+  - CeketTamirli
+  - HoodyHasarli
+  - HoodyTamirli
+  - KazakHasarli
+  - KazakTamirli
+  - TshirtHasarli
+  - TshirtTamirli
+  - CostumeHasarli
+  - CostumeTamirli
+  - PantolonHasarli
+  - PantolonTamirli
+  - NextDayUI
+  - Portrait0
+  - Portrait1
+  - Portrait2
+  - Portrait3
+  - Portrait4
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Materials
+  - minigame
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: minigame1
+    uniqueID: 1927678641
+    locked: 0
