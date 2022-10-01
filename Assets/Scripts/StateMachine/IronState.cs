@@ -16,7 +16,7 @@ public class IronState : GameBaseState
 
     public override void UpdateState(GameStateManager game)
     {
-        if (screenCT.didFabric && screenCT.didPlay)
+        if (screenCT.didFabric && screenCT.playing)
         {
             game.SwitchState(game.playingState);
         }

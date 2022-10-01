@@ -12,7 +12,7 @@ public class needle_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        myAnimator = GetComponent<Animator>();
         myGameController = GameObject.Find("GameController");
     }
 

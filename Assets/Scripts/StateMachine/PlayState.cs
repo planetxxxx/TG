@@ -8,6 +8,7 @@ public class PlayState : GameBaseState
     public int currentCloth;
     public override void EnterState(GameStateManager game)
     {
+        screenCT.playing = true;
         currentColor = CustomerState.currentColor;
         currentCloth = CustomerState.currentCloth;
         game.Dialogue.SetActive(false);
@@ -77,11 +78,5 @@ public class PlayState : GameBaseState
     public override void UpdateState(GameStateManager game)
     {
       
-        if (screenCT.didPlay)
-        {
-            screenCT.nextCustomer();
-            game.SwitchState(game.customeringState);
-           
-        }
     }
 }

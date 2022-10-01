@@ -6,13 +6,8 @@ public class button_controller : MonoBehaviour
 {
     [SerializeField] GameObject StartGame;
     [SerializeField] GameObject EndGame;
-    public GameObject iron;
-    public GameObject a;
-    public GameObject b;
-    public GameObject c;
+
     public GameObject needle;
-    public GameObject machine;
-    public GameObject fabric;
     public AudioSource sew;
     
 
@@ -29,11 +24,8 @@ public class button_controller : MonoBehaviour
     }
     public void startGame()
     {
-        sew.Play();
         StartGame.SetActive(false);
         Time.timeScale = 1f;
-        fabric.GetComponent<fabric_controller>().speedHor = 25f;
-        fabric.GetComponent<fabric_controller>().speedVer = 0.85f;
 
 
     }
@@ -44,8 +36,5 @@ public class button_controller : MonoBehaviour
 
 
         Time.timeScale = 1f;
-        a.SetActive(false);
-        b.SetActive(false);
-        c.SetActive(false);
     }
 }

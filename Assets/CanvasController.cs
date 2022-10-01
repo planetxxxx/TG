@@ -16,6 +16,11 @@ public class CanvasController : MonoBehaviour
 
     public void Update()
     {
+        if (screenCT.playing == true)
+        {
+            Play();
+            screenCT.playing = false;
+        }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             PauseMenuUI.SetActive(true);
@@ -32,7 +37,12 @@ public class CanvasController : MonoBehaviour
         screenCT.isNextDay = false;
 
     }
+    public void Played()
+    {
+        screenCT.playing = true;
 
+
+    }
 
     public void Play()
     {

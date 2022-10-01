@@ -3284,6 +3284,9 @@ MonoBehaviour:
   EndGameUI: {fileID: 1254034218}
   NeedleUI: {fileID: 2023464937}
   PauseMenuUI: {fileID: 463785049}
+  GamePrefab: {fileID: 6703552174882064544, guid: c3458aa59f00b414da6b2eff0812381d, type: 3}
+  GamePrefab2: {fileID: 6818746140504091505, guid: 6f18451721c22c543b16d3b7b47ffea3, type: 3}
+  GamePrefab3: {fileID: 5575281117498577813, guid: 66e38dd1aa9d6e449be10fb3485fb5f3, type: 3}
 --- !u!4 &815182131
 Transform:
   m_ObjectHideFlags: 0
