@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class needle_controller : MonoBehaviour
 {
-    public Animator myAnimator;
-    public float score = 0, badQua = 958, aveQua = 1916;
-    GameObject myGameController;
-    public bool incScore, decScore, rightNeedle, didIron;
+    Animator myAnimator;
+    [SerializeField] float score = 0, badQua = 958, aveQua = 1916;
+    public bool incScore, decScore;
     public string qua;
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
-        myGameController = GameObject.Find("GameController");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         if (Input.GetButton("needlekey"))
         {
             myAnimator.GetComponent<Animator>().enabled = true;
-            if(incScore)
+            if (incScore)
             {
                 score++;
             }
-            else if(decScore)
+            else if (decScore)
             {
                 score--;
             }
@@ -36,24 +34,42 @@ public class needle_controller : MonoBehaviour
         {
             myAnimator.GetComponent<Animator>().enabled = false;
         }
-       
-      
 
-        
-
+        if (!screenCT.didIron && !screenCT.RightNeedle)
+        {
+            qua = "bad";
+        }
+        if (screenCT.didIron || screenCT.RightNeedle)
+        {
             if (score <= badQua)
             {
                 qua = "bad";
+                screenCT.score = qua;
+            }
+            else
+            {
+                qua = "ave";
+                screenCT.score = qua;
+            }
+        }
+        if (screenCT.didIron && screenCT.RightNeedle)
+        {
+            if (score <= badQua)
+            {
+                qua = "bad";
+                screenCT.score = qua;
             }
             else if (score > badQua && score <= aveQua)
             {
                 qua = "ave";
+                screenCT.score = qua;
             }
             else
             {
                 qua = "good";
+                screenCT.score = qua;
             }
-   
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -4,26 +4,19 @@ using UnityEngine;
 
 public class fabric_controller : MonoBehaviour
 {
-    public float speedVer = 1f;
+    [SerializeField] float speedVer = 1f;
     [SerializeField] GameObject endCanvas;
     [SerializeField] GameObject needle;
     [SerializeField] GameObject badScore, goodScore, aveScore;
     [SerializeField] Sprite fabYellow, fabGreen, fabPink, fabWhite, fabBlue;
-    public GameObject canvas;
     public float speedHor;
     public string quality;
     string fabColor;
-    public Vector3 defaultPos;
-    public GameObject start;
-    public GameObject exit;
-    public GameObject startBut;
-    public GameObject exitBut;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        defaultPos = transform.position;
+
     }
 
     // Update is called once per frame
@@ -54,16 +47,7 @@ public class fabric_controller : MonoBehaviour
     }
     private void OnBecameInvisible()
     {
-
-
         endCanvas.SetActive(true);
-
-
-        start.SetActive(false);
-        exit.SetActive(true);
-        startBut.SetActive(false);
-        exitBut.SetActive(true);
-
         if (quality == "bad")
         {
             badScore.SetActive(true);
@@ -78,21 +62,26 @@ public class fabric_controller : MonoBehaviour
         }
         Time.timeScale = 0f;
 
-
-        
     }
-
-    public void sifirla()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.name == "needle")
+        {
+            endCanvas.SetActive(true);
+            if (quality == "bad")
+            {
+                badScore.SetActive(true);
+            }
+            else if (quality == "good")
+            {
+                goodScore.SetActive(true);
+            }
+            else if (quality == "ave")
+            {
+                aveScore.SetActive(true);
+            }
+            Time.timeScale = 0f;
+        }
 
-        transform.position = defaultPos;
-        badScore.SetActive(false);
-        goodScore.SetActive(false);
-        aveScore.SetActive(false);
-        needle.GetComponent<needle_controller>().score = 0;
-        speedVer = 0;
-        speedHor = 0;
-        
     }
-
 }

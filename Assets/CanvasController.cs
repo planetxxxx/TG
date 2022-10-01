@@ -12,14 +12,15 @@ public class CanvasController : MonoBehaviour
     public GameObject GamePrefab;
     public GameObject GamePrefab2;
     public GameObject GamePrefab3;
+    public static bool canPlay = false;
 
 
     public void Update()
     {
-        if (screenCT.playing == true)
+        if (canPlay)
         {
             Play();
-            screenCT.playing = false;
+            canPlay = false;
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -55,6 +56,9 @@ public class CanvasController : MonoBehaviour
     public void GoNextDay()
     {
         screenCT.Totalmoney += screenCT.earnedToday;
+        screenCT.day++;
+        screenCT.currentCustomer = 0;
+        screenCT.earnedToday = 0;
         NextDayUI.SetActive(false);
     }
 

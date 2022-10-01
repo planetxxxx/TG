@@ -22,6 +22,7 @@ public class screenCT : MonoBehaviour
     public static bool canIron = true;
     public static bool NextCustomer = false;
     public static bool playing = false;
+    public static bool RightNeedle;
 
     public static string score;
 
@@ -44,8 +45,6 @@ public class screenCT : MonoBehaviour
 
         if (currentCustomer>5)
         {
-            currentCustomer = 0;
-            day++;
             isNextDay = true;
         }
     }
@@ -57,7 +56,6 @@ public class screenCT : MonoBehaviour
         currentCustomer++;
         didFabric = false;
         didIron = false;
-        didPlay = false;
         didTalk = false;
         canIron = true;
         machineCT.rend.sprite = machineCT.normal;
@@ -66,7 +64,7 @@ public class screenCT : MonoBehaviour
         {
             earnedToday += 15;
         }
-        else if (score == "average")
+        else if (score == "ave")
         {
             earnedToday += 5;
         }
@@ -74,20 +72,8 @@ public class screenCT : MonoBehaviour
         {
             earnedToday += -5;
         }
-        int skor;
-        skor = Random.Range(0, 2);
-        switch (skor)
-        {
-            case 0:
-                screenCT.score = "good";
-                break;
-            case 1:
-                screenCT.score = "average";
-                break;
-            case 2:
-                screenCT.score = "bad";
-                break;
-        }
+       
+        
 
     }
 
@@ -108,6 +94,7 @@ public class screenCT : MonoBehaviour
         didIron = false;
         didFabric = false;
         didPlay = false;
+        CanvasController.canPlay = false;
         didTalk = false;
         isNextDay = false;
         canIron = true;

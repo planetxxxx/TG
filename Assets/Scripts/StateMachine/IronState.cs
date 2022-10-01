@@ -6,7 +6,7 @@ public class IronState : GameBaseState
 {
     public override void EnterState(GameStateManager game)
     {
-
+       
     }
 
     public override void OnCollisionEnter(GameStateManager game)
@@ -18,7 +18,9 @@ public class IronState : GameBaseState
     {
         if (screenCT.didFabric && screenCT.playing)
         {
+            Debug.Log("irondanPlay");
             game.SwitchState(game.playingState);
+            
         }
     }
 }

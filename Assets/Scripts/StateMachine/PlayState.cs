@@ -8,7 +8,7 @@ public class PlayState : GameBaseState
     public int currentCloth;
     public override void EnterState(GameStateManager game)
     {
-        screenCT.playing = true;
+        
         currentColor = CustomerState.currentColor;
         currentCloth = CustomerState.currentCloth;
         game.Dialogue.SetActive(false);
@@ -68,6 +68,9 @@ public class PlayState : GameBaseState
                 break;
         }
 
+        CanvasController.canPlay = true;
+        screenCT.playing = false;
+
     }
 
     public override void OnCollisionEnter(GameStateManager game)
@@ -77,6 +80,13 @@ public class PlayState : GameBaseState
 
     public override void UpdateState(GameStateManager game)
     {
-      
+        Debug.Log("suanplayState");
+        if (screenCT.didPlay)
+        {
+            screenCT.didPlay = false;
+            Debug.Log("ifinicinde");
+            screenCT.nextCustomer();
+            game.SwitchState(game.customeringState);
+        }
     }
 }
