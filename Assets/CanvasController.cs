@@ -9,6 +9,10 @@ public class CanvasController : MonoBehaviour
     public GameObject EndGameUI;
     public GameObject NeedleUI;
     public GameObject PauseMenuUI;
+    public GameObject GamePrefab;
+    public GameObject GamePrefab2;
+    public GameObject GamePrefab3;
+
 
     public void Update()
     {
@@ -30,9 +34,10 @@ public class CanvasController : MonoBehaviour
     }
 
 
-    public void Played()
+    public void Play()
     {
-        screenCT.didPlay = true;
+        Instantiate(GamePrefab);
+       
         
     }
 

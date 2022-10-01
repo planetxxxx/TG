@@ -76,6 +76,7 @@ public class PlayState : GameBaseState
 
     public override void UpdateState(GameStateManager game)
     {
+      
         if (screenCT.didPlay)
         {
             screenCT.nextCustomer();

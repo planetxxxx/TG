@@ -21,6 +21,7 @@ public class screenCT : MonoBehaviour
     public static bool isNextDay = false;
     public static bool canIron = true;
     public static bool NextCustomer = false;
+    public static bool playing = false;
 
     public static string score;
 
