@@ -731,7 +731,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2061594455}
-        m_TargetAssemblyTypeName: screenCT, Assembly-CSharp
+        m_TargetAssemblyTypeName: SceneCT, Assembly-CSharp
         m_MethodName: close
         m_Mode: 1
         m_Arguments:
@@ -865,7 +865,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2061594455}
-        m_TargetAssemblyTypeName: screenCT, Assembly-CSharp
+        m_TargetAssemblyTypeName: SceneCT, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:

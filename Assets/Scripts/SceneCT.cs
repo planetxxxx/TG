@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class screenCT : MonoBehaviour
+public class SceneCT : MonoBehaviour
 {
 
     public void close()
