@@ -10,26 +10,26 @@ public class button_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0f;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        StartGame.SetActive(false);
     }
     public void startGame()
     {
-        StartGame.SetActive(false);
-        Time.timeScale = 1f;
+ 
+        
+        
     }
     public void endGame()
     {
-        screenCT.didPlay = true;
-        EndGame.SetActive(false);
-        screenCT.nextCustomer();
-        Time.timeScale = 1f;
-
+        Debug.Log("sssss");
+        GameStateManager.canNextCustomer = true;
+        
         Destroy(transform.parent.gameObject);
+        EndGame.SetActive(false);
     }
 }

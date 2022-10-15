@@ -60,7 +60,7 @@ public class fabric_controller : MonoBehaviour
         {
             aveScore.SetActive(true);
         }
-        Time.timeScale = 0f;
+        
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -80,7 +80,7 @@ public class fabric_controller : MonoBehaviour
             {
                 aveScore.SetActive(true);
             }
-            Time.timeScale = 0f;
+            
         }
 
     }

@@ -105,7 +105,8 @@ public class CustomerState : GameBaseState
                 GameObject.FindGameObjectWithTag("CostumeHasarli").GetComponent<SpriteRenderer>().color = currentColor;
                 break;
         }
-
+        game.Dialogue.SetActive(true);
+        GameStateManager.didTalk = true;
     }
 
     public override void OnCollisionEnter(GameStateManager game)
@@ -116,14 +117,12 @@ public class CustomerState : GameBaseState
     public override void UpdateState(GameStateManager game)
     {
 
-        if (screenCT.didTalk)
+        if (GameStateManager.didTalk)
         {
             game.SwitchState(game.ironingState);
+            
+            GameStateManager.didTalk = false;
         }
-        if (!screenCT.didTalk)
-        {
-            game.Dialogue.SetActive(true);
-            screenCT.didTalk = true;
-        }
+        
     }
 }

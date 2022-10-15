@@ -35,39 +35,52 @@ public class needle_controller : MonoBehaviour
             myAnimator.GetComponent<Animator>().enabled = false;
         }
 
-        if (!screenCT.didIron && !screenCT.RightNeedle)
+        if (GameStateManager.canIron && !GameStateManager.RightNeedle)
         {
             qua = "bad";
         }
-        if (screenCT.didIron || screenCT.RightNeedle)
+        else if (!GameStateManager.canIron && !GameStateManager.RightNeedle)
         {
             if (score <= badQua)
             {
                 qua = "bad";
-                screenCT.score = qua;
+                GameStateManager.score = qua;
             }
             else
             {
                 qua = "ave";
-                screenCT.score = qua;
+                GameStateManager.score = qua;
             }
         }
-        if (screenCT.didIron && screenCT.RightNeedle)
+        else if (GameStateManager.canIron && GameStateManager.RightNeedle)
         {
             if (score <= badQua)
             {
                 qua = "bad";
-                screenCT.score = qua;
+                GameStateManager.score = qua;
+            }
+            else
+            {
+                qua = "ave";
+                GameStateManager.score = qua;
+            }
+        }
+        else if (!GameStateManager.canIron && GameStateManager.RightNeedle)
+        {
+            if (score <= badQua)
+            {
+                qua = "bad";
+                GameStateManager.score = qua;
             }
             else if (score > badQua && score <= aveQua)
             {
                 qua = "ave";
-                screenCT.score = qua;
+                GameStateManager.score = qua;
             }
             else
             {
                 qua = "good";
-                screenCT.score = qua;
+                GameStateManager.score = qua;
             }
         }
     }

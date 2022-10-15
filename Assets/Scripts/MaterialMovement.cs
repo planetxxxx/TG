@@ -17,13 +17,20 @@ public class MaterialMovement : MonoBehaviour
         if (_dragging )
         {
             
-            if (!screenCT.didFabric)
+            if (!GameStateManager.didFabric)
             {
                 var mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 transform.position = mousePosition;
             }
-                  
+           
 
+
+        }
+        
+
+        if(GameStateManager.didFabric)
+        {
+            transform.position = defaultPosition;
         }
 
     }
@@ -42,7 +49,8 @@ public class MaterialMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("machine"))
         {
-            screenCT.didFabric = true;
+            GameStateManager.didFabric = true;
+            
         }
     }
 

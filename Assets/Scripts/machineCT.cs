@@ -20,7 +20,7 @@ public class machineCT : MonoBehaviour
 
     public void Update()
     {
-        if (screenCT.didFabric == true)
+        if (GameStateManager.didFabric == true)
         {
             rend.sprite = highlight;
         }

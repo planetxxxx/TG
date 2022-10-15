@@ -8,11 +8,16 @@ public class PlayState : GameBaseState
     public int currentCloth;
     public override void EnterState(GameStateManager game)
     {
-        
+        machineCT.rend.sprite = machineCT.normal;
+        IronCt.rend.sprite = IronCt.normal;
+        GameStateManager.DidPlayButton = false;
+        GameStateManager.canIron = true;
+        GameStateManager.didFabric = false;
+        GameStateManager.DidPlayButton = false;
         currentColor = CustomerState.currentColor;
         currentCloth = CustomerState.currentCloth;
-        game.Dialogue.SetActive(false);
-
+        
+        
         switch (currentCloth)
         {
             case 0:
@@ -68,8 +73,12 @@ public class PlayState : GameBaseState
                 break;
         }
 
-        CanvasController.canPlay = true;
-        screenCT.playing = false;
+
+        game.StartMiniGame.SetActive(false);
+        game.MainGame.SetActive(false);
+        game.CreateMiniGame();
+
+        
 
     }
 
@@ -80,13 +89,41 @@ public class PlayState : GameBaseState
 
     public override void UpdateState(GameStateManager game)
     {
-        Debug.Log("suanplayState");
-        if (screenCT.didPlay)
+        if (GameStateManager.currentCustomer == 5)
         {
-            screenCT.didPlay = false;
-            Debug.Log("ifinicinde");
-            screenCT.nextCustomer();
-            game.SwitchState(game.customeringState);
+            GameStateManager.Totalmoney += GameStateManager.earnedToday;
+            GameStateManager.day++;
+            GameStateManager.currentCustomer = 0;
+            GameStateManager.earnedToday = 0;
+            game.NextDayUI.SetActive(true);
+
         }
+        else
+        {
+            
+            if (GameStateManager.canNextCustomer)
+            {
+                if (GameStateManager.score == "good")
+                {
+                    GameStateManager.earnedToday += 15;
+                }
+                else if (GameStateManager.score == "ave")
+                {
+                    GameStateManager.earnedToday += 5;
+                }
+                else if (GameStateManager.score == "bad")
+                {
+                    GameStateManager.earnedToday += -5;
+                }
+                GameStateManager.currentCustomer++;
+                GameStateManager.canNextCustomer = false;
+                game.MainGame.SetActive(true);
+                game.SwitchState(game.customeringState);
+
+            }
+        }
+        
+      
+       
     }
 }

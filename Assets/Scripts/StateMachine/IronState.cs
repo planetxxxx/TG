@@ -6,7 +6,8 @@ public class IronState : GameBaseState
 {
     public override void EnterState(GameStateManager game)
     {
-       
+        GameStateManager.canIron = true;
+        GameStateManager.didTalk = false;
     }
 
     public override void OnCollisionEnter(GameStateManager game)
@@ -16,9 +17,13 @@ public class IronState : GameBaseState
 
     public override void UpdateState(GameStateManager game)
     {
-        if (screenCT.didFabric && screenCT.playing)
+        if (GameStateManager.didFabric && game.currentState == game.ironingState)
         {
-            Debug.Log("irondanPlay");
+            game.StartMiniGame.SetActive(true);
+        }
+        if (GameStateManager.didFabric && GameStateManager.DidPlayButton)
+        {
+            
             game.SwitchState(game.playingState);
             
         }
