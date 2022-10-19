@@ -16,19 +16,20 @@ public class button_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartGame.SetActive(false);
+        
     }
     public void startGame()
     {
- 
-        
-        
+
+        StartGame.SetActive(false);
+        Time.timeScale = 1;
+
     }
     public void endGame()
     {
-        Debug.Log("sssss");
         GameStateManager.canNextCustomer = true;
-        
+        GameStateManager.didIron = false;
+
         Destroy(transform.parent.gameObject);
         EndGame.SetActive(false);
     }

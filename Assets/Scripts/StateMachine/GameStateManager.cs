@@ -29,6 +29,7 @@ public class GameStateManager : MonoBehaviour
     public static int maxCustomer = 5;
     public static int currentCustomer = 1;
     public static int earnedToday = 0;
+    public static int minigameRandom;
 
     public static bool didFabric = false;
     public static bool canNextCustomer = false;
@@ -38,6 +39,7 @@ public class GameStateManager : MonoBehaviour
     public static bool NextCustomer = false;
     public static bool playing = false;
     public static bool RightNeedle;
+    public static bool didIron = false;
     public static bool DidPlayButton;
 
     public static string score;
@@ -75,8 +77,8 @@ public class GameStateManager : MonoBehaviour
 
     void Update()
     {
-        
-        
+
+
         currentState.UpdateState(this);
 
        
@@ -94,8 +96,22 @@ public class GameStateManager : MonoBehaviour
 
     //Game FUNCTIONS
     public void CreateMiniGame()
-    { 
-       Instantiate(GamePrefab);
+    {
+       minigameRandom = Random.Range(0, 2);
+        Debug.Log(minigameRandom); 
+       switch (minigameRandom)
+        {
+            case 0:
+                Instantiate(GamePrefab);
+                break;
+            case 1:
+                Instantiate(GamePrefab2);
+                break;
+            case 2:
+                Instantiate(GamePrefab3);
+                break;
+
+        }
     }
 
 

@@ -80,6 +80,7 @@ public class IronCt : MonoBehaviour
         steam.Play();
         GetComponent<SpriteRenderer>().sprite = highlighted;
         GameStateManager.canIron = false;
+        GameStateManager.didIron = true;
     }
   
 }

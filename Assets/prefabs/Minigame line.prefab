@@ -1916,12 +1916,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  badQua: 600
-  aveQua: 1000
+  badQua: 2
+  aveQua: 4
   incScore: 0
   decScore: 0
-  rightNeedle: 0
-  didIron: 0
   qua: 
 --- !u!61 &8114223670820967011
 BoxCollider2D:

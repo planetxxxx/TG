@@ -17,55 +17,24 @@ public class needle_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+  
         if (Input.GetButton("needlekey"))
         {
             myAnimator.GetComponent<Animator>().enabled = true;
             if (incScore)
             {
-                score++;
+                score += 1 * Time.deltaTime;
             }
             else if (decScore)
             {
-                score--;
+                score -= 1 * Time.deltaTime;
             }
         }
         else
         {
             myAnimator.GetComponent<Animator>().enabled = false;
         }
-
-        if (GameStateManager.canIron && !GameStateManager.RightNeedle)
-        {
-            qua = "bad";
-        }
-        else if (!GameStateManager.canIron && !GameStateManager.RightNeedle)
-        {
-            if (score <= badQua)
-            {
-                qua = "bad";
-                GameStateManager.score = qua;
-            }
-            else
-            {
-                qua = "ave";
-                GameStateManager.score = qua;
-            }
-        }
-        else if (GameStateManager.canIron && GameStateManager.RightNeedle)
-        {
-            if (score <= badQua)
-            {
-                qua = "bad";
-                GameStateManager.score = qua;
-            }
-            else
-            {
-                qua = "ave";
-                GameStateManager.score = qua;
-            }
-        }
-        else if (!GameStateManager.canIron && GameStateManager.RightNeedle)
+        if (!GameStateManager.didIron)
         {
             if (score <= badQua)
             {
@@ -83,6 +52,59 @@ public class needle_controller : MonoBehaviour
                 GameStateManager.score = qua;
             }
         }
+        else
+        {
+            qua = "bad";
+            GameStateManager.score = qua;
+        }
+        /*if (GameStateManager.didIron && !GameStateManager.RightNeedle)
+        {
+            qua = "bad";
+        }
+        else if (!GameStateManager.didIron && !GameStateManager.RightNeedle)
+        {
+            if (score <= badQua)
+            {
+                qua = "bad";
+                GameStateManager.score = qua;
+            }
+            else
+            {
+                qua = "ave";
+                GameStateManager.score = qua;
+            }
+        }
+        else if (GameStateManager.didIron && GameStateManager.RightNeedle)
+        {
+            if (score <= badQua)
+            {
+                qua = "bad";
+                GameStateManager.score = qua;
+            }
+            else
+            {
+                qua = "ave";
+                GameStateManager.score = qua;
+            }
+        }
+        else if (!GameStateManager.didIron && GameStateManager.RightNeedle)
+        {
+            if (score <= badQua)
+            {
+                qua = "bad";
+                GameStateManager.score = qua;
+            }
+            else if (score > badQua && score <= aveQua)
+            {
+                qua = "ave";
+                GameStateManager.score = qua;
+            }
+            else
+            {
+                qua = "good";
+                GameStateManager.score = qua;
+            }
+        }*/
     }
 
     private void OnTriggerExit2D(Collider2D collision)

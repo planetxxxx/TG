@@ -14,6 +14,7 @@ public class MaterialMovement : MonoBehaviour
     }
     void Update()
     {
+        gameObject.GetComponent<SpriteRenderer>().color = CustomerState.currentColor;
         if (_dragging )
         {
             

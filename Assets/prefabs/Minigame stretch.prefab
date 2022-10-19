@@ -1407,12 +1407,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  badQua: 3054
-  aveQua: 6109
+  badQua: 3
+  aveQua: 6
   incScore: 0
   decScore: 0
-  rightNeedle: 0
-  didIron: 0
   qua: 
 --- !u!61 &8901886516004674119
 BoxCollider2D:
@@ -2777,11 +2775,6 @@ MonoBehaviour:
   badScore: {fileID: 3349468220609590615}
   goodScore: {fileID: 215469356533409471}
   aveScore: {fileID: 7276721763409357922}
-  fabYellow: {fileID: 21300000, guid: 1ba39892e04b89a4e959ddaeae51309a, type: 3}
-  fabGreen: {fileID: 21300000, guid: c92f01a7c8fcaf549a7ddc8dde31a004, type: 3}
-  fabPink: {fileID: 21300000, guid: 83c8caec29ed2e64b96427fa47c668ad, type: 3}
-  fabWhite: {fileID: 21300000, guid: 9a208a314c837484f937162b674b49d3, type: 3}
-  fabBlue: {fileID: 21300000, guid: ff073afc047702d44bddea944fb1dea3, type: 3}
   speedHor: 25
   quality: 
 --- !u!61 &1742205194775476369

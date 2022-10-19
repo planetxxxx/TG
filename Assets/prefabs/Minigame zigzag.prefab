@@ -243,7 +243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &211983382368590668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1212,12 +1212,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  badQua: 4500
-  aveQua: 8000
+  badQua: 10
+  aveQua: 15
   incScore: 0
   decScore: 0
-  rightNeedle: 0
-  didIron: 0
   qua: 
 --- !u!61 &5575281117561609993
 BoxCollider2D:
@@ -1490,11 +1488,6 @@ MonoBehaviour:
   badScore: {fileID: 4422657110317660428}
   goodScore: {fileID: 4913940601814387905}
   aveScore: {fileID: 3610774353526050018}
-  fabYellow: {fileID: 21300000, guid: 1ba39892e04b89a4e959ddaeae51309a, type: 3}
-  fabGreen: {fileID: 21300000, guid: c92f01a7c8fcaf549a7ddc8dde31a004, type: 3}
-  fabPink: {fileID: 21300000, guid: 83c8caec29ed2e64b96427fa47c668ad, type: 3}
-  fabWhite: {fileID: 21300000, guid: 9a208a314c837484f937162b674b49d3, type: 3}
-  fabBlue: {fileID: 21300000, guid: ff073afc047702d44bddea944fb1dea3, type: 3}
   speedHor: 25
   quality: 
 --- !u!50 &1022409845
@@ -1938,7 +1931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &845293604503246517
 RectTransform:
   m_ObjectHideFlags: 0
