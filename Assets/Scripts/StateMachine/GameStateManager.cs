@@ -97,8 +97,7 @@ public class GameStateManager : MonoBehaviour
     //Game FUNCTIONS
     public void CreateMiniGame()
     {
-       minigameRandom = Random.Range(0, 2);
-        Debug.Log(minigameRandom); 
+       minigameRandom = Random.Range(0, 2); 
        switch (minigameRandom)
         {
             case 0:

@@ -34,7 +34,7 @@ public class needle_controller : MonoBehaviour
         {
             myAnimator.GetComponent<Animator>().enabled = false;
         }
-        if (!GameStateManager.didIron)
+        if (GameStateManager.didIron)
         {
             if (score <= badQua)
             {
@@ -54,9 +54,18 @@ public class needle_controller : MonoBehaviour
         }
         else
         {
-            qua = "bad";
-            GameStateManager.score = qua;
+            if (score <= badQua)
+            {
+                qua = "bad";
+                GameStateManager.score = qua;
+            }
+            else
+            {
+                qua = "ave";
+                GameStateManager.score = qua;
+            }
         }
+        
         /*if (GameStateManager.didIron && !GameStateManager.RightNeedle)
         {
             qua = "bad";
